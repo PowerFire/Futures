@@ -1,0 +1,17 @@
+http://blog.csdn.net/sigmarising/article/details/79262969
+
+
+vs code ¦Û°Ê¸É»ô
+https://www.jianshu.com/p/d6ae983db0b2
+
+
+{
+  "python.linting.enabled": false,
+
+    "python.autoComplete.extraPaths": 
+	[
+        "E:/GitHub/Futures/env/Lib/site-packages"
+    
+	],
+    "python.autoComplete.addBrackets": true
+}
