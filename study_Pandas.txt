@@ -1,0 +1,27 @@
+series.sort_value()
+series.sort_index()
+series.max()
+series.min()
+s1+s2
+
+
+Dataframe.sort_values(by=4)
+Dataframe.sort_values(axis=1,by=4)
+Dataframe.sort_index()
+Dataframe.max()
+Dataframe.max(axis=1)
+Dataframe.min()
+Dataframe.min(axis=1)
+Dataframe.mean()
+Dataframe.describe()
+
+========================================================================
+Binning 分級
+score_list= [30,70,60,49,40,89]
+bins=[30,59,79,100]
+
+a=pandas.cut(score_list, bins)
+type(a)
+a.value_counts()
+pandas.util.testing.rands(5)==>生成 5個字 的字串
+a=pandas.cut(dataframe['名稱'], bins=bins, labels=['bads','ok','great'])
