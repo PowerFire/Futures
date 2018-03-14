@@ -25,3 +25,34 @@ type(a)
 a.value_counts()
 pandas.util.testing.rands(5)==>生成 5個字 的字串
 a=pandas.cut(dataframe['名稱'], bins=bins, labels=['bads','ok','great'])
+
+========================================================================
+GroupBy
+Dataframe=df
+g=df.groupby(df['city'])
+g.groups==>type is dict
+g.groups['BJ']
+g.get_groups['BJ']
+g.get_groups['BJ'].max()
+g.get_groups['BJ'].mean()
+g.max()
+for group_name, group_value in g:
+	print(group_name)
+	print(group_value)
+	
+========================================================================
+Aggregation 常和 Groupby一起用
+http://pbpython.com/pandas_transform.html
+
+g_new=df.groupby(df['city','wind'])
+g_new.get_groups('BJ',3)
+g.agg('max/min/mean')
+
+def foo(attr):
+	return attr.max()-attr.min()
+	
+g.agg(foo)
+
+
+
+
