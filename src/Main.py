@@ -10,3 +10,7 @@ print(df.index)
 MTX=df[df['MTX    ']=='MTX    ']
 print(MTX.columns)
 print(MTX.iloc[:,4:6])
+
+pd.read_html
+pd.read_json()
+pd.read_html()

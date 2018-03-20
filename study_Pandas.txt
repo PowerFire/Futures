@@ -39,7 +39,8 @@ g.max()
 for group_name, group_value in g:
 	print(group_name)
 	print(group_value)
-	
+
+select * from table_1 groupby column_1==>?
 ========================================================================
 Aggregation 常和 Groupby一起用
 http://pbpython.com/pandas_transform.html
@@ -52,7 +53,74 @@ def foo(attr):
 	return attr.max()-attr.min()
 	
 g.agg(foo)
+	
+========================================================================
+Apply
+df 內新增 series
+	df['table_name']=Series(['a']*3989)
+	df['A']=df['A'].apply(str.upper)
+df 刪除一個series
+	del df['A']
 
 
+temp=df['data'].strip().split(' ')
 
+def foo(line):
+	line=line.strip().split(' ')
+	return Series([line[1], line[3], line[5])
+
+
+df_temp=def['data'].apply(foo)
+df_temp.rename(columns={0:'Symbol',1:''Seqno,2:'Price'})
+
+df_new=df.combine_first(df_temp)
+def df_new['data']
+
+========================================================================
+Clean Duplicate Data 清理重複數據
+df= pd.read_csv('../data/demo_duplicate.csv')
+
+df.shape
+
+df.head(10) //預設5
+
+df['Seqno'].unique()
+
+len(df['Seqno'].unique()) ==>不重複數據有多少
+
+df['Seqno'].duplicated() ==> 每一行數據是否有重複(true 有重複)
+
+df.drop_duplicates(['Seqno']).head()
+
+df.drop_duplicates(['Seqno'],keep='last').head()
+
+
+========================================================================
+Time Series
+datetime.datetime(2016,9,20,0,0)
+
+
+t_list= [
+	datetime.datetime(2016,9,20,0,0)
+	datetime.datetime(2016,10,20,0,0)
+	datetime.datetime(2016,10,22,0,0)
+	datetime.datetime(2017,9,20,0,0)
+	datetime.datetime(2017,10,20,0,0)
+]
+
+
+s1= Series(np.randomw.rand(5), index=t_list)
+
+s1['2016']
+
+s1['2016-10']
+
+s1[datetime.datetime(2016,9,20)]
+
+t=pd.date_range(start='2017-01-01',end='2017-02-01',freq='W')
+
+t=pd.date_range(start='2017-01-01',periods=10)
+t=pd.date_range(start='2017-01-01',periods=10, freq='W')
+
+s2=Series(np.random.rand(100), index=pd.date_range(start='20170101',periods=100))
 

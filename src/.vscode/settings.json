@@ -3,5 +3,5 @@
     "python.autoComplete.extraPaths": [
         "E:/GitHub/Futures/env/Lib/site-packages"
     ],
-    "python.autoComplete.addBrackets": false
+    "python.autoComplete.addBrackets": true
 }
